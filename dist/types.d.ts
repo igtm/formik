@@ -5,8 +5,8 @@ export interface FormikValues {
 export declare type FormikErrors<Values> = {
   [K in keyof Values]?: Values[K] extends any[]
     ? Values[K][number] extends object
-      ? FormikErrors<Values[K][number]>[] | string
-      : string
+      ? FormikErrors<Values[K][number]>[] | string | string[]
+      : string | string[]
     : Values[K] extends object
     ? FormikErrors<Values[K]>
     : string
